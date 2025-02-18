@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { signUp } from "../firebase/auth";
 import { useRouter } from "next/navigation";
+import '../app/globals.css';
 
 const Signup = () => {
   const [email, setEmail] = useState("");

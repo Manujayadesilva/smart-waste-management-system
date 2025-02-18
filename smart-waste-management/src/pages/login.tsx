@@ -3,6 +3,7 @@ import { useState } from "react";
 import { login, googleLogin } from "../firebase/auth";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import '../app/globals.css';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -95,7 +96,6 @@ const Login = () => {
             <Image src="/google-icon.svg" alt="Google" width={20} height={20} className="mr-2" />
             Google
           </button>
-          
         </div>
 
         {/* Error Message */}
