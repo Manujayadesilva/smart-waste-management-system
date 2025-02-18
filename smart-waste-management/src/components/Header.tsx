@@ -1,29 +1,53 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 const Header = () => {
-  const pathname = usePathname();
-
   return (
-    <header className="bg-gray-900 text-white p-4 flex justify-between items-center">
-      <h1 className="text-xl font-bold">Smart Waste Management</h1>
-      <nav>
-        <ul className="flex gap-4">
+    <header className="bg-white shadow-md px-6 py-4 flex items-center justify-between w-full">
+      {/* Left Section: Logo */}
+      <div className="flex items-center">
+        <Image src="/logo.svg" alt="Logo" width={30} height={30} />
+      </div>
+
+      {/* Navigation Links */}
+      <nav className="flex-grow">
+        <ul className="flex justify-center gap-8 text-gray-900 font-medium">
           <li>
-            <Link href="/" className={`hover:underline ${pathname === "/" ? "text-blue-400" : ""}`}>Home</Link>
+            <Link href="/" className="hover:text-gray-500">
+              Product
+            </Link>
           </li>
           <li>
-            <Link href="/login" className={`hover:underline ${pathname === "/login" ? "text-blue-400" : ""}`}>Login</Link>
+            <Link href="/features" className="hover:text-gray-500">
+              Features
+            </Link>
           </li>
           <li>
-            <Link href="/signup" className={`hover:underline ${pathname === "/signup" ? "text-blue-400" : ""}`}>Sign Up</Link>
+            <Link href="/marketplace" className="hover:text-gray-500">
+              Marketplace
+            </Link>
           </li>
           <li>
-            <Link href="/dashboard" className={`hover:underline ${pathname === "/dashboard" ? "text-blue-400" : ""}`}>Dashboard</Link>
+            <Link href="/company" className="hover:text-gray-500">
+              Company
+            </Link>
           </li>
         </ul>
       </nav>
+
+      {/* Right Section: Login & Sign-up Buttons */}
+      <div className="flex items-center gap-4">
+        <Link href="/login" className="text-gray-900 hover:text-gray-500">
+          Log in
+        </Link>
+        <Link
+          href="/signup"
+          className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+        >
+          Sign up
+        </Link>
+      </div>
     </header>
   );
 };
