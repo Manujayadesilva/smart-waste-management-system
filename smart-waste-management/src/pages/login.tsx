@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { login, googleLogin } from "../firebase/auth";
+import { login, } from "../firebase/auth";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import '../app/globals.css';
@@ -20,21 +20,21 @@ const Login = () => {
     }
   };
 
-  const handleGoogleLogin = async () => {
-    try {
-      await googleLogin();
-      router.push("/dashboard");
-    } catch (err: any) {
-      setError(err.message);
-    }
-  };
+  // const handleGoogleLogin = async () => {
+  //   try {
+  //     await googleLogin();
+  //     router.push("/dashboard");
+  //   } catch (err: any) {
+  //     setError(err.message);
+  //   }
+  // };
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-50">
       <div className="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
         {/* Logo */}
         <div className="flex justify-center mb-4">
-          <Image src="/logo.svg" alt="Logo" width={40} height={40} />
+          <Image src="/logo.webp" alt="Logo" width={40} height={40} />
         </div>
 
         {/* Title */}
@@ -81,14 +81,14 @@ const Login = () => {
         </button>
 
         {/* OR Divider */}
-        <div className="flex items-center my-4">
+        {/* <div className="flex items-center my-4">
           <hr className="flex-grow border-gray-300" />
           <span className="mx-2 text-gray-500 text-sm">Or continue with</span>
           <hr className="flex-grow border-gray-300" />
-        </div>
+        </div> */}
 
         {/* Social Login Buttons */}
-        <div className="flex gap-4">
+        {/* <div className="flex gap-4">
           <button
             onClick={handleGoogleLogin}
             className="flex items-center justify-center w-1/2 border py-2 rounded-md hover:bg-gray-100"
@@ -96,7 +96,7 @@ const Login = () => {
             <Image src="/google-icon.svg" alt="Google" width={20} height={20} className="mr-2" />
             Google
           </button>
-        </div>
+        </div> */}
 
         {/* Error Message */}
         {error && <p className="text-red-500 text-sm text-center mt-4">{error}</p>}

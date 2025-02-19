@@ -7,7 +7,7 @@ const Header = () => {
     <header className="bg-white shadow-md px-6 py-4 flex items-center justify-between w-full">
       {/* Left Section: Logo */}
       <div className="flex items-center">
-        <Image src="/logo.svg" alt="Logo" width={30} height={30} />
+        <Image src="/logo.webp" alt="Logo" width={50} height={30} />
       </div>
 
       {/* Navigation Links */}
@@ -23,6 +23,7 @@ const Header = () => {
               Features
             </Link>
           </li>
+          
           <li>
             <Link href="/marketplace" className="hover:text-gray-500">
               Marketplace
