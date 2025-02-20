@@ -1,9 +1,8 @@
 import { auth } from "./firebaseConfig";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc } from "firebase/firestore";
 const db = getFirestore();
 
-// Signup function
 // Signup function
 interface SignupParams {
   name: string;
@@ -12,6 +11,11 @@ interface SignupParams {
   address: string;
   phone: string;
 }
+
+export const getUserRole = async (uid: string) => {
+  const userDoc = await getDoc(doc(db, "users", uid));
+  return userDoc.exists() ? userDoc.data()?.role : "user";
+};
 
 export const signup = async ({ name, email, password, address, phone }: SignupParams) => {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -72,5 +76,7 @@ export const logout = async () => {
     throw error;
   }
 };
+
+export { auth };
 // Function not implemented error removed
 
