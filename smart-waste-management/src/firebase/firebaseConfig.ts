@@ -4,7 +4,7 @@ import { getAuth } from "firebase/auth";
 
 // Your Firebase config (replace with your actual config)
 const firebaseConfig = {
-  apiKey: "AIzaSyBVRhl5af7yx04_MtYuN5ejYgSjbLwDdVU",
+  apiKey: "secrets.FREBASE",
   authDomain: "smart-waste-management-3041a.firebaseapp.com",
   projectId: "smart-waste-management-3041a",
   storageBucket: "smart-waste-management-3041a.firebasestorage.app",
